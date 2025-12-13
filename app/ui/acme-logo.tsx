@@ -1,4 +1,5 @@
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
+// change import
 import {lusitana} from "@/app/ui/font";
 
 export default function AcmeLogo() {
