@@ -1,6 +1,8 @@
 'use server'
 
-import { z } from 'zod'
+import {z} from 'zod'
+import {revalidatePath} from 'next/cache'
+import {redirect} from 'next/navigation'
 import postgres from 'postgres'
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' })
@@ -31,4 +33,7 @@ export async function createInvoice(formData: FormData) {
 
   // This form data will be printed in the terminal, not the browser console
   // console.log(rawFormData)
+
+  revalidatePath('/dashboard/invoices')
+  redirect('/dashboard/invoices')
 }
