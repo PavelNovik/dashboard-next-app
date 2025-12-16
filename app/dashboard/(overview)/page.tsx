@@ -5,6 +5,8 @@ import { lusitana } from '@/app/ui/fonts'
 import { Suspense } from 'react'
 import { CardSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from '@/app/ui/skeletons'
 
+export const fetchCache = 'force-no-store'
+
 export default async function Page() {
   return (
     <main>
