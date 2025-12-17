@@ -2,8 +2,6 @@ import { BanknotesIcon, ClockIcon, InboxIcon, UserGroupIcon } from '@heroicons/r
 import { lusitana } from '@/app/ui/fonts'
 import { fetchCardData } from '@/app/lib/data'
 
-export const dynamic = 'force-dynamic'
-
 const iconMap = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
