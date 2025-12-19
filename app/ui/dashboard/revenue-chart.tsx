@@ -11,7 +11,7 @@ import { fetchRevenue } from '@/app/lib/data' // This component is representatio
 
 export default async function RevenueChart() {
   const revenue = await fetchRevenue()
-  console.log(revenue)
+  // console.log(revenue)
   const chartHeight = 350
   // NOTE: Uncomment this code in Chapter 7
 
