@@ -1,14 +1,22 @@
-import { lusitana } from '@/app/ui/fonts'
+import Table from '@/app/ui/customers/table'
 import { Metadata } from 'next'
+import { fetchFilteredCustomers } from '@/app/lib/data'
 
 export const metadata: Metadata = {
   title: 'Customers',
 }
 
-export default function Page() {
+export default async function Page(props: {
+  searchParams?: Promise<{
+    query?: string
+  }>
+}) {
+  const searchParams = await props.searchParams
+  const query = searchParams?.query || ''
+  const customers = await fetchFilteredCustomers(query)
   return (
     <main>
-      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>Customers</h1>
+      <Table customers={customers} />
     </main>
   )
 }
